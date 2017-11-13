@@ -7,7 +7,7 @@
   <class>com.rayan.Bank.model.entity.DepositEntity</class>
   <properties>
     <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
-    <property name="javax.persistence.jdbc.url"    value="jdbc:derby:arman;create=true" />
+    <property name="javax.persistence.jdbc.url"    value="jdbc:derby:arman1;create=true" />
     <!--<property name="javax.persistence.jdbc.user" value="username" />-->
     <!--<property name="javax.persistence.jdbc.password" value="password" />-->
     <!--<property name="javax.persistence.schema-generation.database.action" value="create"/>-->

@@ -11,7 +11,11 @@ This stylesheet and the associated (x)html may be modified in any way to fit you
     padding: 0;
 }
 html {
-    background-color: rgba(61, 61, 59, 0.35);
+    background: rgba(96, 96, 96, 0.41) url(/resources/image/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .container {
     margin: 30px auto;
@@ -265,12 +269,3 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #bbbaba;
-}
-
-div {
-    border-radius: 5px;
-    background-color: #bbbaba;
-    padding: 20px;
-}

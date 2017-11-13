@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+    <ui:include src="/WEB-INF/menu.xhtml" />
+    <div class="ui-g-3"></div>
+    <p:fieldset legend="Insert Customer" style="margin-bottom:20px" class="ui-g-6">
+        <p:messages autoUpdate="true"/>
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel value="Name:" for="name" />
+                <h:panelGrid columns="1" cellpadding="5">
+                    <p:inputText id="name" value="#{customerBean.customerDTO.name}"  />
+                </h:panelGrid>
+                <p:outputLabel value="Family:" for="family" />
+                <h:panelGrid columns="1" cellpadding="5">
+                    <p:inputText id="family" value="#{customerBean.customerDTO.family}"  />
+                </h:panelGrid>
+                <p:outputLabel value="Email:" for="email" />
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:inputText id="email" value="#{customerBean.customerDTO.eMail}" required="true" validatorMessage="Value does not match pattern.">
+                        <f:validateRegex pattern="^[(\w)]+@[(\w)]+\.[(\w)]+$" />
+                    </p:inputText>
+                    <p:message for="email" />
+                </h:panelGrid>
+                <p:outputLabel value="Customer Number:" for="customerNumber" />
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:inputText required="true" id="customerNumber" value="#{customerBean.customerDTO.customerNumber}"  validatorMessage="Value does not match pattern." >
+                        <f:validateRegex pattern="^[0-9]{8}$" />
+                    </p:inputText>
+                    <p:message for="customerNumber" />
+                </h:panelGrid>
+                <h:outputLabel value="#{customerBean.lable}" />
+                <p:commandButton icon="ui-icon-check" value="insert" id="btn1" ajax="false" actionListener="#{customerBean.insert}"/>
+            </h:panelGrid>
+        </h:form>
+    </p:fieldset>
+    <div class="ui-g-3"></div>
+</h:body>
+</html>

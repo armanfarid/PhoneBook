@@ -70,21 +70,21 @@ public class CustomerDAO implements ICustomerDAO,Serializable {
     public void update(CustomerEntity customerEntity) throws  CantUpdateData {
 
 
-//        CustomerEntity customerEntity1=null;
+        CustomerEntity customerEntity1=null;
         try{
 
             entityManager.getTransaction().begin();
-//            String jpql = "select customerEntity1 from CustomerEntity customerEntity where customerEntity1.customerNumber = :customerNumber";
-//            Query query=entityManager.createQuery(jpql);
-//            query.setParameter("customerNumber", customerEntity.getCustomerNumber());
-//            customerEntity1=(CustomerEntity) query.getSingleResult();
-//            customerEntity1.setName(customerEntity.getName());
-//            customerEntity1.setFamily( customerEntity.getFamily());
-//            customerEntity1.seteMail( customerEntity.geteMail());
+            String jpql = "select customerEntity1 from CustomerEntity customerEntity where customerEntity1.customerNumber = :customerNumber";
+            Query query=entityManager.createQuery(jpql);
+            query.setParameter("customerNumber", customerEntity.getCustomerNumber());
+            customerEntity1=(CustomerEntity) query.getSingleResult();
+            customerEntity1.setName(customerEntity.getName());
+            customerEntity1.setFamily( customerEntity.getFamily());
+            customerEntity1.seteMail( customerEntity.geteMail());
 
 
 
-            entityManager.merge(customerEntity);
+//            entityManager.merge(customerEntity);
             entityManager.getTransaction().commit();
         }catch (Exception e){
             throw new CantUpdateData("update data failed  ");
